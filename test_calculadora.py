@@ -76,3 +76,9 @@ def test_operaciones_entrada_no_numerica():
         restar(10, None)
     with pytest.raises(TypeError):
         multiplicar(True, 5)
+
+
+def test_valores_limite_y_grandes():
+    # CP13: Valores límite y números grandes en rama mejora-validacion
+    assert sumar(10**12, 10**12) == 2 * (10**12)
+    assert dividir(1, 10**6) == 1e-6
